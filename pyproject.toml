@@ -1,16 +1,21 @@
-
+[project]
 name = "formfill-env"
 version = "0.1.0"
 description = "OpenEnv form filling environment"
 authors = [
-    { name = "Himanshu", email = "hpin.2206@gmail.com" }
+    { name = "Himanshu" }
 ]
+
 dependencies = [
     "fastapi",
     "uvicorn",
     "pydantic",
-    "openai"
+    "openai",
+    "openenv-core>=0.2.0"
 ]
+
+[project.scripts]
+start = "server.app:app"
 
 [build-system]
 requires = ["setuptools", "wheel"]
