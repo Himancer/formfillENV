@@ -23,7 +23,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy project files
 COPY env/ ./env/
-COPY app.py .
+COPY server/app.py .
 COPY inference.py .
 COPY openenv.yaml .
 
