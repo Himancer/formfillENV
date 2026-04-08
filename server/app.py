@@ -57,15 +57,18 @@ def root():
 def health():
     return {"status": "ok"}
 
-
 @app.post("/reset")
-def reset(req: ResetRequest) -> Dict[str, Any]:
+def reset(req: Optional[ResetRequest] = None) -> Dict[str, Any]:
     """Reset the environment for a given task. Returns initial observation."""
     try:
-        env = FormEnv(task_id=req.task_id)
+        task_id = req.task_id if req else "task_1_easy"
+
+        env = FormEnv(task_id=task_id)
         obs = env.reset()
-        _sessions[req.task_id] = env
+        _sessions[task_id] = env
+
         return obs.model_dump()
+
     except ValueError as e:
         raise HTTPException(status_code=404, detail=str(e))
 
