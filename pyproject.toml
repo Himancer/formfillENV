@@ -1,5 +1,5 @@
 [project]
-name = "formfill-env"
+name = "formfillENV"
 version = "0.1.0"
 description = "OpenEnv form filling environment"
 authors = [
