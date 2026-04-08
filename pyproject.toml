@@ -1,0 +1,17 @@
+
+name = "formfill-env"
+version = "0.1.0"
+description = "OpenEnv form filling environment"
+authors = [
+    { name = "Himanshu", email = "hpin.2206@gmail.com" }
+]
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pydantic",
+    "openai"
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
